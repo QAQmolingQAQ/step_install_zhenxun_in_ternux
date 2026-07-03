@@ -21,6 +21,7 @@ pkg install git
 
 ```bash
 pkg update && pkg upgrade -y
+pkg install postgresql
 pg_ctl -D $PREFIX/var/lib/postgresql -l logfile start
 psql -d postgres
 ```
