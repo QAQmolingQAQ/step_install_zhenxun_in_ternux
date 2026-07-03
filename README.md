@@ -9,9 +9,11 @@ curl -o napcat.termux.sh https://nclatest.znin.net/NapNeko/NapCat-Installer/main
 
 已修改：将 debian 改为 ubuntu 
 我的可以在仓库下载，也可以你手动修改。
+
 'execute_command "proot-distro install ubuntu --override-alias napcat" "安装napcat容器"'
 运行后，会安装napcat和proot.
-之后安装sql,我安装的是PostgreSQL数据库。|
+
+之后安装sql,我安装的是PostgreSQL数据库。
 先不进虚拟环境，在termux环境下，
 ```bash
 pkg install git
@@ -48,7 +50,7 @@ ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT, INSERT, UPDATE, DELETE O
 ```
 \q
 ```
-##根据需要决定
+## 根据需要决定
 # 1修改 postgresql.conf 监听所有地址（可不修改）
 找到并编辑配置文件：
 
@@ -77,7 +79,7 @@ host    all             all             0.0.0.0/0            trust
 pg_ctl -D $PREFIX/var/lib/postgresql restart
 ```
 ---
-##现在进入容器，
+## 现在进入容器，
 ```bash
 proot-distro login napcat
 ```
@@ -88,12 +90,12 @@ apt install git -y
 ```
 然后
 安装uv
-方法一
+# 方法一
 ```bash
 curl --proto '=https' --tlsv1.2 -LsSf https://github.com/astral-sh/uv/releases/latest/download/uv-installer.sh | sh
 source $HOME/.local/bin/env
 ```
-方法二
+# 方法二
 ```bash
 pip install uv
 ```
@@ -102,7 +104,7 @@ apt install pipx
 pipx install uv
 ```
 
-#下载真寻，方法一
+# 下载真寻，方法一
 ```bash
 cd ~
 git clone https://github.com/HibiKier/zhenxun_bot.git
@@ -110,7 +112,7 @@ cd zhenxun_bot
 uv venv --python 3.10
 source ~/zhenxun_bot/.venv/bin/activate
 ```
-#下载真寻，方法二
+# 下载真寻，方法二
 ```bash
 cd ~
 mkdir mkdir ~/uv_temp
@@ -120,14 +122,15 @@ source ~/uv_temp/.venv/bin/activate
 uv pip install nb-cli
 uv pip install nb-cli-plugin-zhenxun
 ```
-选择目录，安装，~替换为你的目录
+选择目录，安装，cd的~替换为你的目录
 ```
 cd ~
+source ~/uv_temp/.venv/bin/activate
 nb zx
 ```
 安装，先选1，然后git和下载zip都行，依赖选择n，后面安装。然后可以选择是否删除~/uv_temp目录，删除命令是 rm -rf ~/uv_temp 。
 
-##安装
+## 安装
 ，
 ```bash
 cd ~/zhenxun_bot 
