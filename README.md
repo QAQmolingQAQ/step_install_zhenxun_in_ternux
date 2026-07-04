@@ -172,6 +172,8 @@ unset CFLAGS
 unset LDFLAGS
 unset LD_LIBRARY_PATH
 ```
+然后手动配置一下配置
+napcat，运行后，在手机浏览器打开127.0.0.1:6099
 
 最后运行真寻
 ```bash
@@ -179,3 +181,5 @@ cd ~/zhenxun_bot
 source ~/zhenxun_bot/.venv/bin/activate
 uv run zx
 ```
+配置一下配置
+真寻，运行后，在手机浏览器打开127.0.0.1:8080
